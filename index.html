@@ -11,43 +11,53 @@
 <body>
   <main class="main p-3 pt-4">
     <h4 class="mb-3">Edit <code class="code">src/index.ts</code> and save to reload</h3>
-      <form>
+      <form id="config_form">
         <div class="mb-3">
           <label class="form-label">Development guide</label>
           <div>
-            <a href="https://lark-technologies.larksuite.com/docx/HvCbdSzXNowzMmxWgXsuB2Ngs7d" target="_blank"
+            <a href="https://bytedance.larkoffice.com/docx/X0DRdskrpoxf8kxfFj1csLtNnmc" target="_blank"
               rel="noopener noreferrer">
-              Base Extensions Guide
-            </a>
-            、
-            <a href="https://bytedance.feishu.cn/docx/HazFdSHH9ofRGKx8424cwzLlnZc" target="_blank"
-              rel="noopener noreferrer">
-              多维表格插件开发指南
+              多维表格仪表盘插件开发指南
             </a>
           </div>
         </div>
-        <div class="mb-3">
-          <label class="form-label">API</label>
-          <div>
-            <a href="https://lark-technologies.larksuite.com/docx/Y6IcdywRXoTYSOxKwWvuLK09sFe" target="_blank"
-              rel="noopener noreferrer">
-              Base Extensions Front-end API
-            </a>
-            、
-            <a href="https://bytedance.feishu.cn/docx/HjCEd1sPzoVnxIxF3LrcKnepnUf" target="_blank"
-              rel="noopener noreferrer">
-              多维表格插件API
-            </a>
+        <div style="display: flex">
+          <div style="flex:1">
+            <div style="display: none" id="view_block">
+              <h1>
+                这是展示/配置预览状态下的图表区域
+              </h1>
+            </div>
+            <p>展示数据：</p>
+            <div style="word-break: break-all;white-space: pre-wrap" id="view_block_data"></div>
+          </div>
+
+          <div style="display: none;flex:1" id="config_block">
+            <div>
+              <h1>
+                这是配置状态下才展示的配置区域
+              </h1>
+              配置状态下展示配置相关的东西，点击保存后进入展示状态。
+              <div class="mb-3">
+                <label for="tableSelect" class="form-label">选择插件数据源</label>
+                <select id='tableSelect' class="form-select"></select>
+              </div>
+              <div class="mb-3">
+                <label for="tableSelect" class="form-label">选择插件数据源-groups</label>
+                <select id='tableSelect_groups' class="form-select"></select>
+              </div>
+              <div class="mb-3">
+                <label for="tableSelect" class="form-label">选择插件数据源-series</label>
+                <select id='tableSelect_series' class="form-select"></select>
+              </div>
+              <button class='btn btn-outline-primary' type="button" id="save_btn">
+                保存
+              </button>
+            </div>
           </div>
         </div>
-        <div class="mb-3">
-          <label for="tableSelect" class="form-label">Select Table</label>
-          <select id='tableSelect' class="form-select"></select>
-        </div>
-        <button class='btn btn-outline-primary' type="button" id="addRecord">
-          Add Record
-        </button>
       </form>
+
   </main>
   <script type="module" src="/src/index.ts"></script>
 </body>
